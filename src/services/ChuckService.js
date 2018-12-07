@@ -4,13 +4,24 @@ const client = new Chuck();
 
 class ChuckService {
 
-  getRandomJoke(){
-    return client.getRandomJoke().then(function (response) {
+  getRandomJoke(categ){
+    return client.getRandomJoke(categ).then(function (response) {
       return response
     }).catch(function (err) {
          console.log(err);
        });
   }
+
+  getAllCategories() {
+    return client.getJokeCategories()
+    .then(function (response) {
+      return response
+    })
+    .catch(function (err) {
+        console.log(err);
+       });
+  }
+
 }
 
 const chuckService = new ChuckService();
