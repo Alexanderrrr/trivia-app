@@ -1,10 +1,6 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import ChuckService from '../services/ChuckService'
 
-Vue.use(Vuex)
-
-export const store = new Vuex.Store({
+export default {
 
   state: {
     joke: '',
@@ -46,4 +42,4 @@ export const store = new Vuex.Store({
 
   }
 
-})
+}
