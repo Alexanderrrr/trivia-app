@@ -72,7 +72,7 @@ export default {
    ...mapActions(['getRandomTrivies', 'getTriviaCategories','getTriviesFromCategory' ]),
 
    answer(answer){
-     alert(answer)
+     alert(`Correct answer is: ${answer}`)
    },
 
     changeCurrentPage(page) {
