@@ -5,6 +5,7 @@ export default {
   state: {
     randomTrivies: [],
     triviaCategories: [],
+    triviaByCategory: []
   },
 
   actions: {
@@ -31,7 +32,7 @@ export default {
     async getTriviesFromCategory( {commit}, id ){
       try {
         const response = await triviaService.getTriviesFromCategory(id)
-        commit('SET_TRIVIES', response)
+        commit('SET_TRIVIES_BY_CATEGORY', response)
       } catch (e) {
           console.log(e);
       }
@@ -47,12 +48,17 @@ export default {
 
     SET_TRIVIA_CATEGORIES(state, cat){
       state.triviaCategories = cat
+    },
+
+    SET_TRIVIES_BY_CATEGORY (state , trivia) {
+      state.triviaByCategory = trivia
     }
   },
 
   getters: {
     trivies: state => state.randomTrivies,
-    triviaCategories: state => state.triviaCategories
+    triviaCategories: state => state.triviaCategories,
+    triviaByCategory: state => state.triviaByCategory
   }
 
 }
